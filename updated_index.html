@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Πύλη Κοινωνικής Μέριμνας - Δομή & Αρχιτεκτονική</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+body {
+  background: #f3f4f8;
+  color: #21242a;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+header {
+  background: #28292d;
+  color: #fff;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 4px 16px rgba(20,20,20,0.11);
+  padding: 2rem 0 1rem 0;
+  margin-bottom: 2rem;
+}
+a, .btn, button {
+  font-weight: 600;
+  border-radius: 1.5em;
+  background: #e5e6ea;
+  color: #232426 !important;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
+  padding: 0.7em 1.7em;
+  margin: 0.15em 0.4em;
+  transition: background 0.18s, color 0.12s;
+}
+a:hover, .btn:hover, button:hover {
+  background: #d0d1d6;
+  color: #1a1a1a !important;
+}
+</style>
+    <style>
+        @media print {
+            body { print-color-adjust: exact; }
+            .no-print { display: none !important; }
+        }
+        .tree-line {
+            border-left: 2px solid #e5e7eb;
+            margin-left: 1rem;
+            padding-left: 1rem;
+        }
+        .tree-item {
+            position: relative;
+        }
+        .tree-item::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 1rem;
+            width: 1rem;
+            height: 2px;
+            background: #e5e7eb;
+        }
+        .folder-icon { color: #f59e0b; }
+        .file-icon { color: #6b7280; }
+        .section-card {
+            transition: transform 0.2s ease-in-out;
+        }
+        .section-card:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center space-x-4">
+                <i class="fas fa-sitemap text-3xl"></i>
+                <div>
+                    <h1 class="text-3xl font-bold">Πύλη Κοινωνικής Μέριμνας</h1>
+                    <p class="text-blue-200">Δομή Αρχείων & Πληροφοριακή Αρχιτεκτονική</p>
+                </div>
+            </div>
+        </div>
+    </header>
+<div style="text-align:right; margin: 1.5rem 0;">
+  <a href="http://localhost/forum2/public" target="_blank" style="background:#2b86c5; color:#fff; font-weight:bold; border-radius:1.5em; padding:0.7em 2em; box-shadow:0 2px 8px #789;">
+    <i class="fas fa-comments" style="margin-right:0.6em"></i> Forum Επαγγελματιών
+  </a>
+</div>
+    <div class="container mx-auto px-6 py-8">
+        <!-- Overview -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-info-circle text-blue-600 mr-3"></i>
+                    Επισκόπηση Πύλης
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-3">Ομάδα Στόχος</h3>
+                        <p class="text-gray-600">Κοινωνικοί λειτουργοί που εργάζονται σε περιφερειακές διευθύνσεις κοινωνικής μέριμνας σε όλη την Ελλάδα</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-3">Βασικές Λειτουργίες</h3>
+                        <ul class="text-gray-600 space-y-1">
+                            <li>• Διαχείριση ελέγχων & αναφορών</li>
+                            <li>• Διαχείριση υιοθεσίας & αναδοχής</li>
+                            <li>• Οδηγίες νομοθετικής συμμόρφωσης</li>
+                            <li>• Επαγγελματική ανάπτυξη & εκπαίδευση</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="mb-12">
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <i class="fas fa-gavel text-3xl text-red-600 mb-3"></i>
+                    <h3 class="text-xl font-bold text-gray-800">65+</h3>
+                    <p class="text-gray-600">Νομοθετικά Κείμενα</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <i class="fas fa-file-alt text-3xl text-yellow-600 mb-3"></i>
+                    <h3 class="text-xl font-bold text-gray-800">32</h3>
+                    <p class="text-gray-600">Έντυπα Αιτήσεων</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <i class="fas fa-clipboard-check text-3xl text-orange-600 mb-3"></i>
+                    <h3 class="text-xl font-bold text-gray-800">15</h3>
+                    <p class="text-gray-600">Εκθέσεις Ελέγχων</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <i class="fas fa-graduation-cap text-3xl text-indigo-600 mb-3"></i>
+                    <h3 class="text-xl font-bold text-gray-800">20+</h3>
+                    <p class="text-gray-600">Εκπαιδευτικά Υλικά</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Sections -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-folder-tree text-blue-600 mr-3"></i>
+                    Κύριες Θεματικές Ενότητες
+                </h2>
+                
+                <div class="grid lg:grid-cols-2 gap-6">
+                    <!-- Αποφάσεις Αδειοδότησης -->
+                    <div class="section-card bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border border-purple-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-certificate text-purple-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-purple-800">Αποφάσεις Αδειοδότησης</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-purple-500 mr-2"></i>
+                                <span>ΚΑΑ - ΚΔΗΦ (6 αρχεία)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-purple-500 mr-2"></i>
+                                <span>ΚΔΑΠ - ΚΔΑΠ ΑμεΑ (7 αρχεία)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-purple-500 mr-2"></i>
+                                <span>ΚΗΦΗ (7 αρχεία)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-purple-500 mr-2"></i>
+                                <span>ΜΦΗ (5 αρχεία)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-purple-500 mr-2"></i>
+                                <span>Παιδικές Εξοχές (3 αρχεία)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-purple-500 mr-2"></i>
+                                <span>ΣΥΔ (7 αρχεία)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Νομοθεσία -->
+                    <div class="section-card bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg border border-red-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-gavel text-red-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-red-800">Νομοθεσία Κοινωνικής Μέριμνας</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-red-500 mr-2"></i>
+                                <span>ΒΣΦΟΠ (2 αρχεία)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-red-500 mr-2"></i>
+                                <span>ΚΑΑ - ΚΔΗΦ (12 αρχεία)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-red-500 mr-2"></i>
+                                <span>ΚΔΑΠ - ΚΔΑΠ ΑμεΑ (11 αρχεία)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-red-500 mr-2"></i>
+                                <span>ΚΗΦΗ (13 αρχεία)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-red-500 mr-2"></i>
+                                <span>ΜΦΗ (9 αρχεία)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-red-500 mr-2"></i>
+                                <span>Παιδικές Εξοχές (8 αρχεία)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-red-500 mr-2"></i>
+                                <span>ΣΥΔ (10 αρχεία)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Έντυπα Αιτήσεων -->
+                    <div class="section-card bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-lg border border-yellow-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-file-alt text-yellow-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-yellow-800">Έντυπα Αιτήσεων</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-yellow-500 mr-2"></i>
+                                <span>Αιτήσεις Τελικές (32 αρχεία)</span>
+                            </div>
+                            <div class="text-gray-600 ml-6">
+                                <p>Περιλαμβάνει έντυπα για ίδρυση και λειτουργία:</p>
+                                <ul class="mt-1 space-y-1">
+                                    <li>• Κατασκηνώσεων</li>
+                                    <li>• Ιδρυμάτων Παιδικής Πρόνοιας</li>
+                                    <li>• ΚΔΑΠ & ΚΔΑΠ-ΜΕΑ</li>
+                                    <li>• ΜΦΗ & ΣΥΔ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Εκθέσεις Ελέγχων -->
+                    <div class="section-card bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clipboard-check text-orange-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-orange-800">Εκθέσεις Ελέγχων</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-orange-500 mr-2"></i>
+                                <span>Εκθέσεις Τελικές (15 αρχεία)</span>
+                            </div>
+                            <div class="text-gray-600 ml-6">
+                                <p>Περιλαμβάνει εκθέσεις αξιολόγησης για:</p>
+                                <ul class="mt-1 space-y-1">
+                                    <li>• Κέντρα Αποθεραπείας</li>
+                                    <li>• Στέγες Υποστηριζόμενης Διαβίωσης</li>
+                                    <li>• Κέντρα Κλειστής Νοσηλείας</li>
+                                    <li>• Παιδικές Κατασκηνώσεις</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Εκπαιδευτικό Υλικό -->
+                    <div class="section-card bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-lg border border-indigo-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-graduation-cap text-indigo-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-indigo-800">Εκπαιδευτικό Υλικό</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-indigo-500 mr-2"></i>
+                                <span>Κύρια Αρχεία (16 αρχεία)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-indigo-500 mr-2"></i>
+                                <span>Οδηγίες Ιδρυμάτων Παιδικής Προστασίας (4 αρχεία)</span>
+                            </div>
+                            <div class="text-gray-600 ml-6">
+                                <p>Περιλαμβάνει:</p>
+                                <ul class="mt-1 space-y-1">
+                                    <li>• Οδηγούς σπουδών</li>
+                                    <li>• Εκπαιδευτικά προγράμματα</li>
+                                    <li>• Διαδικασίες κοινωνικής έρευνας</li>
+                                    <li>• Υλικό για βία κατά γυναικών</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Τηλεφωνικοί Κατάλογοι -->
+                    <div class="section-card bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-lg border border-teal-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-address-book text-teal-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-teal-800">Τηλεφωνικοί Κατάλογοι</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-file text-teal-500 mr-2"></i>
+                                <span>6 αρχεία καταλόγων</span>
+                            </div>
+                            <div class="text-gray-600 ml-6">
+                                <p>Περιλαμβάνει:</p>
+                                <ul class="mt-1 space-y-1">
+                                    <li>• Κατάλογος ΑΠΔ Αττικής</li>
+                                    <li>• Τηλέφωνα ΔΔΥΚΚΜ ΠΕΑΑ</li>
+                                    <li>• Υπηρεσιακά τηλέφωνα</li>
+                                    <li>• Κατάλογος Υπουργείου Υγείας</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Αποφάσεις Συγκρότησης Επιτροπών -->
+                    <div class="section-card bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border border-green-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-users text-green-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-green-800">Αποφάσεις Συγκρότησης Επιτροπών</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-file text-green-500 mr-2"></i>
+                                <span>13 αρχεία αποφάσεων</span>
+                            </div>
+                            <div class="text-gray-600 ml-6">
+                                <p>Περιλαμβάνει:</p>
+                                <ul class="mt-1 space-y-1">
+                                    <li>• Επιτροπές Κατασκηνώσεων</li>
+                                    <li>• Επιτροπές ΚΑΑ & ΣΥΔ</li>
+                                    <li>• Ορισμούς Κοινωνικών Συμβούλων</li>
+                                    <li>• Ειδικές Επιτροπές</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Αρχεία Manus01 -->
+                    <div class="section-card bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-lg border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-archive text-gray-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Αρχεία Manus01</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-folder text-gray-500 mr-2"></i>
+                                <span>12 αρχεία markdown</span>
+                            </div>
+                            <div class="text-gray-600 ml-6">
+                                <p>Προηγούμενη εργασία που περιλαμβάνει:</p>
+                                <ul class="mt-1 space-y-1">
+                                    <li>• Οδηγίες διαχείρισης περιεχομένου</li>
+                                    <li>• Σύνοψη παραδοτέων</li>
+                                    <li>• Θεματικές ενότητες</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- File Structure Tree -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-sitemap text-blue-600 mr-3"></i>
+                    Πραγματική Δομή Αρχείων
+                </h2>
+                
+                <div class="bg-gray-900 text-green-400 p-6 rounded-lg font-mono text-sm overflow-x-auto">
+                    <pre>
+SW_PORTAL/
+├── ΑΠΟΦΑΣΕΙΣ_ΑΔΕΙΟΔΟΤΗΣΗΣ/
+│   ├── ΚΑΑ - ΚΔΗΦ/
+│   │   └── ΣΧΕΤΙΚΕΣ ΑΠΟΦΑΣΕΙΣ ΚΑΙ ΠΡΑΚΤΙΚΑ ΕΠΙΤΡΟΠΗΣ ΚΑΑ-ΚΔΗΦ/ (6 αρχεία)
+│   ├── ΚΔΑΠ - ΚΔΑΠ ΑμεΑ/
+│   │   └── ΣΧΕΤΙΚΕΣ ΑΠΟΦΑΣΕΙΣ ΚΑΙ ΠΡΑΚΤΙΚΑ ΕΠΙΤΡΟΠΗΣ ΚΔΑΠ - ΚΔΑΠμε Α/ (7 αρχεία)
+│   ├── ΚΗΦΗ/
+│   │   └── ΣΧΕΤΙΚΕΣ ΑΠΟΦΑΣΕΙΣ ΚΑΙ ΠΡΑΚΤΙΚΑ ΕΠΙΤΡΟΠΗΣ ΚΗΦΗ/ (7 αρχεία)
+│   ├── ΜΦΗ/
+│   │   └── ΣΧΕΤΙΚΕΣ ΑΠΟΦΑΣΕΙΣ ΚΑΙ ΠΡΑΚΤΙΚΑ ΕΠΙΤΡΟΠΗΣ ΜΦΗ/ (5 αρχεία)
+│   ├── ΠΑΙΔΙΚΕΣ ΕΞΟΧΕΣ/
+│   │   └── ΣΧΕΤΙΚΕΣ ΑΠΟΦΑΣΕΙΣ ΚΑΙ ΠΡΑΚΤΙΚΑ ΕΠΙΤΡΟΠΗΣ ΠΑΙΔΙΚΕΣ ΚΑΤΑΣΚΗΝΩΣΕΙΣ/ (3 αρχεία)
+│   └── ΣΥΔ/
+│       └── ΣΧΕΤΙΚΕΣ ΑΠΟΦΑΣΕΙΣ ΚΑΙ ΠΡΑΚΤΙΚΑ ΕΠΙΤΡΟΠΗΣ ΣΥΔ/ (7 αρχεία)
+├── ΑΠΟΦΑΣΕΙΣ_ΣΥΓΚΡΟΤΗΣΗΣ_ΕΠΙΤΡΟΠΩΝ_ΚΑΙ_ΚΟΙΝΩΝΙΚΟΥ_ΣΥΜΒΟΥΛΟΥ/ (13 αρχεία)
+├── ΕΚΘΕΣΕΙΣ_ΕΛΕΓΧΩΝ/
+│   └── Εκθέσεις_Τελικές/ (15 αρχεία)
+├── ΕΚΠΑΙΔΕΥΤΙΚΟ_ΥΛΙΚΟ/ (16 αρχεία)
+│   └── ΟΔΗΓΙΕΣ ΠΡΟΣ ΙΔΡΥΜΑΤΑ ΠΑΙΔΙΚΗΣ ΠΡΟΣΤΑΣΙΑΣ/ (4 αρχεία)
+├── ΕΝΤΥΠΑ_ΑΙΤΗΣΕΩΝ/
+│   └── Αιτήσεις_Τελικές/ (32 αρχεία)
+├── ΝΟΜΟΘΕΣΙΑ_ΚΟΙΝΩΝΙΚΗΣ_ΜΕΡΙΜΝΑΣ/
+│   ├── ΒΣΦΟΠ/ (2 αρχεία)
+│   ├── ΚΑΑ - ΚΔΗΦ/ (12 αρχεία)
+│   ├── ΚΔΑΠ - ΚΔΑΠ ΑμεΑ/ (11 αρχεία)
+│   ├── ΚΗΦΗ/ (13 αρχεία)
+│   ├── ΜΦΗ/ (9 αρχεία)
+│   ├── ΠΑΙΔΙΚΕΣ ΕΞΟΧΕΣ/ (8 αρχεία)
+│   ├── ΣΥΔ/ (10 αρχεία)
+│   ├── ΕΓΚΥΚΛΙΟΙ/ (κενός)
+│   ├── ΝΟΜΟΙ/ (κενός)
+│   ├── ΠΡΟΕΔΡΙΚΑ_ΔΙΑΤΑΓΜΑΤΑ/ (κενός)
+│   └── ΥΠΟΥΡΓΙΚΕΣ_ΑΠΟΦΑΣΕΙΣ/ (κενός)
+├── ΤΗΛΕΦΩΝΙΚΟΙ_ΚΑΤΑΛΟΓΟΙ/ (6 αρχεία)
+├── Manus01/ (12 αρχεία markdown)
+├── NEWS_FEEDS_SOURCES/ (κενός)
+├── ΟΔΗΓΟΙ_ΕΦΑΡΜΟΓΗΣ/ (κενός)
+└── [Μη κατηγοριοποιημένα αρχεία ρίζας] (15 αρχεία)
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Access Links -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-external-link-alt text-blue-600 mr-3"></i>
+                    Γρήγορη Πρόσβαση
+                </h2>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <a href="Πλήρης Κατάλογος Αρχείων" class="flex items-center p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+                        <i class="fas fa-list text-blue-600 mr-3"></i>
+                        <span class="font-semibold text-blue-800">Πλήρης Κατάλογος Αρχείων</span>
+                    </a>
+                    <a href="ΝΟΜΟΘΕΣΙΑ_ΚΟΙΝΩΝΙΚΗΣ_ΜΕΡΙΜΝΑΣ/" class="flex items-center p-4 bg-red-50 rounded-lg hover:bg-red-100 transition-colors">
+                        <i class="fas fa-gavel text-red-600 mr-3"></i>
+                        <span class="font-semibold text-red-800">Νομοθεσία</span>
+                    </a>
+                    <a href="ΕΝΤΥΠΑ_ΑΙΤΗΣΕΩΝ/Αιτήσεις_Τελικές/" class="flex items-center p-4 bg-yellow-50 rounded-lg hover:bg-yellow-100 transition-colors">
+                        <i class="fas fa-file-alt text-yellow-600 mr-3"></i>
+                        <span class="font-semibold text-yellow-800">Έντυπα Αιτήσεων</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-600 py-8">
+            <p>&copy; 2025 Πύλη Κοινωνικής Μέριμνας - Ενημερώθηκε με βάση την πραγματική δομή αρχείων</p>
+            <p class="text-sm mt-2">Τελευταία ενημέρωση: Ιανουάριος 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add click handlers for section cards
+        document.querySelectorAll('.section-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // Add click animation
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
+

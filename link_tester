@@ -1,0 +1,24 @@
+import os
+from bs4 import BeautifulSoup
+
+# Πού είναι ο index.html;
+root_dir = r"C:\Users\dee\Desktop\SW PORTAL"
+index_file = os.path.join(root_dir, "updated_index.html")
+
+with open(index_file, encoding="utf-8") as f:
+    soup = BeautifulSoup(f, "html.parser")
+
+broken = []
+for link in soup.find_all("a", href=True):
+    href = link['href']
+    if any(href.lower().endswith(ext) for ext in [".pdf", ".doc", ".docx", ".xls", ".xlsx"]):
+        full_path = os.path.join(root_dir, href)
+        if not os.path.exists(full_path):
+            broken.append(href)
+
+if broken:
+    print("BROKEN DOWNLOAD LINKS FOUND:")
+    for b in broken:
+        print(" -", b)
+else:
+    print("All download links are valid and files exist.")

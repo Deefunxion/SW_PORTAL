@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Welfare Portal - Sitemap & Architecture</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        @media print {
+            body { print-color-adjust: exact; }
+            .no-print { display: none !important; }
+        }
+        .tree-line {
+            border-left: 2px solid #e5e7eb;
+            margin-left: 1rem;
+            padding-left: 1rem;
+        }
+        .tree-item {
+            position: relative;
+        }
+        .tree-item::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 1rem;
+            width: 1rem;
+            height: 2px;
+            background: #e5e7eb;
+        }
+        .folder-icon { color: #f59e0b; }
+        .file-icon { color: #6b7280; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center space-x-4">
+                <i class="fas fa-sitemap text-3xl"></i>
+                <div>
+                    <h1 class="text-3xl font-bold">Social Welfare Portal</h1>
+                    <p class="text-blue-200">Sitemap & Information Architecture Design</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 py-8">
+        <!-- Overview -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-info-circle text-blue-600 mr-3"></i>
+                    Portal Overview
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-3">Target Audience</h3>
+                        <p class="text-gray-600">Social workers operating in regional social welfare directorates across Greece</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-3">Core Functions</h3>
+                        <ul class="text-gray-600 space-y-1">
+                            <li>• Inspection management & reporting</li>
+                            <li>• Adoption & foster care case management</li>
+                            <li>• Legislative compliance guidance</li>
+                            <li>• Peer learning & professional development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Graphical Sitemap -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-project-diagram text-blue-600 mr-3"></i>
+                    1. Graphical Sitemap
+                </h2>
+                
+                <!-- Homepage -->
+                <div class="mb-8">
+                    <div class="flex items-center bg-blue-100 p-4 rounded-lg">
+                        <i class="fas fa-home text-blue-600 text-xl mr-3"></i>
+                        <span class="text-lg font-semibold text-blue-800">Homepage</span>
+                    </div>
+                </div>
+
+                <!-- Main Navigation Tree -->
+                <div class="ml-8">
+                    <!-- Authentication -->
+                    <div class="tree-line mb-6">
+                        <div class="tree-item bg-green-100 p-3 rounded mb-3">
+                            <i class="fas fa-lock text-green-600 mr-2"></i>
+                            <span class="font-semibold">Secure Login System</span>
+                        </div>
+                        <div class="ml-6 space-y-2">
+                            <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                <i class="fas fa-user-circle text-gray-500 mr-2"></i>
+                                User Authentication
+                            </div>
+                            <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                <i class="fas fa-key text-gray-500 mr-2"></i>
+                                Role-based Access Control
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="tree-line mb-6">
+                        <div class="tree-item bg-purple-100 p-3 rounded mb-3">
+                            <i class="fas fa-search text-purple-600 mr-2"></i>
+                            <span class="font-semibold">Global Search</span>
+                        </div>
+                        <div class="ml-6 space-y-2">
+                            <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                <i class="fas fa-filter text-gray-500 mr-2"></i>
+                                Advanced Filters
+                            </div>
+                            <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                <i class="fas fa-history text-gray-500 mr-2"></i>
+                                Search History
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Folders -->
+                    <div class="grid lg:grid-cols-2 gap-6">
+                        <!-- Legislation -->
+                        <div class="tree-line">
+                            <div class="tree-item bg-red-100 p-3 rounded mb-3">
+                                <i class="fas fa-gavel text-red-600 mr-2"></i>
+                                <span class="font-semibold">ΝΟΜΟΘΕΣΙΑ_ΚΟΙΝΩΝΙΚΗΣ_ΜΕΡΙΜΝΑΣ</span>
+                            </div>
+                            <div class="ml-6 space-y-2">
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    National Laws
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    EU Directives
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Regional Regulations
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="file-icon fas fa-file-pdf mr-2"></i>
+                                    LAW_ADOPTION_2023_v2.pdf
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Application Forms -->
+                        <div class="tree-line">
+                            <div class="tree-item bg-yellow-100 p-3 rounded mb-3">
+                                <i class="fas fa-file-alt text-yellow-600 mr-2"></i>
+                                <span class="font-semibold">ΕΝΤΥΠΑ_ΑΙΤΗΣΕΩΝ</span>
+                            </div>
+                            <div class="ml-6 space-y-2">
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Adoption Forms
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Foster Care Forms
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Support Services
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="file-icon fas fa-file-word mr-2"></i>
+                                    FORM_ADOPTION_REQUEST_2024_v1.docx
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Inspection Reports -->
+                        <div class="tree-line">
+                            <div class="tree-item bg-orange-100 p-3 rounded mb-3">
+                                <i class="fas fa-clipboard-check text-orange-600 mr-2"></i>
+                                <span class="font-semibold">ΕΚΘΕΣΕΙΣ_ΕΛΕΓΧΩΝ</span>
+                            </div>
+                            <div class="ml-6 space-y-2">
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Templates
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Completed Reports
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Quality Checklists
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="file-icon fas fa-file-excel mr-2"></i>
+                                    REPORT_FACILITY_INSPECTION_2024_v3.xlsx
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Guides -->
+                        <div class="tree-line">
+                            <div class="tree-item bg-green-100 p-3 rounded mb-3">
+                                <i class="fas fa-book text-green-600 mr-2"></i>
+                                <span class="font-semibold">ΟΔΗΓΟΙ_ΕΦΑΡΜΟΓΗΣ</span>
+                            </div>
+                            <div class="ml-6 space-y-2">
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Procedural Guides
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Best Practices
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Case Studies
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="file-icon fas fa-file-pdf mr-2"></i>
+                                    GUIDE_FOSTER_CARE_PROCEDURES_2024_v1.pdf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Sections -->
+                    <div class="grid lg:grid-cols-2 gap-6 mt-6">
+                        <!-- Educational Material -->
+                        <div class="tree-line">
+                            <div class="tree-item bg-indigo-100 p-3 rounded mb-3">
+                                <i class="fas fa-graduation-cap text-indigo-600 mr-2"></i>
+                                <span class="font-semibold">ΕΚΠΑΙΔΕΥΤΙΚΟ_ΥΛΙΚΟ</span>
+                            </div>
+                            <div class="ml-6 space-y-2">
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Training Modules
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Webinars
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Certification Materials
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Directories -->
+                        <div class="tree-line">
+                            <div class="tree-item bg-teal-100 p-3 rounded mb-3">
+                                <i class="fas fa-address-book text-teal-600 mr-2"></i>
+                                <span class="font-semibold">ΤΗΛΕΦΩΝΙΚΟΙ_ΚΑΤΑΛΟΓΟΙ</span>
+                            </div>
+                            <div class="ml-6 space-y-2">
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Regional Offices
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Partner Organizations
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Emergency Contacts
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- News Sources -->
+                        <div class="tree-line">
+                            <div class="tree-item bg-pink-100 p-3 rounded mb-3">
+                                <i class="fas fa-newspaper text-pink-600 mr-2"></i>
+                                <span class="font-semibold">NEWS_FEEDS_SOURCES</span>
+                            </div>
+                            <div class="ml-6 space-y-2">
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Ministry Updates
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Legislative Changes
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Industry News
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Forum -->
+                        <div class="tree-line">
+                            <div class="tree-item bg-blue-100 p-3 rounded mb-3">
+                                <i class="fas fa-comments text-blue-600 mr-2"></i>
+                                <span class="font-semibold">Professional Forum</span>
+                            </div>
+                            <div class="ml-6 space-y-2">
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Case Discussions
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Legal Q&A
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Regional Groups
+                                </div>
+                                <div class="tree-item bg-gray-50 p-2 rounded text-sm">
+                                    <i class="folder-icon fas fa-folder mr-2"></i>
+                                    Announcements
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Folder Structure Overview -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-folder-tree text-blue-600 mr-3"></i>
+                    2. Folder Structure Overview
+                </h2>
+                
+                <div class="bg-gray-900 text-green-400 p-6 rounded-lg font-mono text-sm overflow-x-auto">
+                    <pre>
+SOCIAL_WELFARE_PORTAL/
+├── 01_AUTHENTICATION/
+│   ├── login_templates/
+│   ├── user_profiles/
+│   └── access_logs/
+├── 02_SEARCH_SYSTEM/
+│   ├── search_indexes/
+│   ├── filter_configurations/
+│   └── search_analytics/
+├── 03_ΝΟΜΟΘΕΣΙΑ_ΚΟΙΝΩΝΙΚΗΣ_ΜΕΡΙΜΝΑΣ/
+│   ├── 01_NATIONAL_LAWS/
+│   │   ├── adoption_legislation/
+│   │   ├── child_protection_laws/
+│   │   └── social_services_acts/
+│   ├── 02_EU_DIRECTIVES/
+│   │   ├── human_rights_directives/
+│   │   └── child_welfare_standards/
+│   ├── 03_REGIONAL_REGULATIONS/
+│   │   ├── prefecture_regulations/
+│   │   └── municipal_bylaws/
+│   └── 04_AMENDMENTS_UPDATES/
+│       ├── pending_changes/
+│       └── implementation_guides/
+├── 04_ΕΝΤΥΠΑ_ΑΙΤΗΣΕΩΝ/
+│   ├── 01_ADOPTION_FORMS/
+│   │   ├── domestic_adoption/
+│   │   ├── international_adoption/
+│   │   └── special_needs_adoption/
+│   ├── 02_FOSTER_CARE_FORMS/
+│   │   ├── application_forms/
+│   │   ├── assessment_forms/
+│   │   └── monitoring_forms/
+│   ├── 03_SUPPORT_SERVICES/
+│   │   ├── financial_aid_forms/
+│   │   ├── counseling_referrals/
+│   │   └── emergency_assistance/
+│   └── 04_TEMPLATES_LIBRARY/
+│       ├── fillable_pdfs/
+│       ├── word_templates/
+│       └── form_instructions/
+├── 05_ΕΚΘΕΣΕΙΣ_ΕΛΕΓΧΩΝ/
+│   ├── 01_INSPECTION_TEMPLATES/
+│   │   ├── facility_inspection/
+│   │   ├── home_study_reports/
+│   │   └── compliance_checklists/
+│   ├── 02_COMPLETED_REPORTS/
+│   │   ├── 2024_reports/
+│   │   ├── 2023_reports/
+│   │   └── archived_reports/
+│   ├── 03_QUALITY_ASSURANCE/
+│   │   ├── review_checklists/
+│   │   ├── approval_workflows/
+│   │   └── feedback_forms/
+│   └── 04_ANALYTICS_DASHBOARD/
+│       ├── performance_metrics/
+│       └── trend_analysis/
+├── 06_ΟΔΗΓΟΙ_ΕΦΑΡΜΟΓΗΣ/
+│   ├── 01_PROCEDURAL_GUIDES/
+│   │   ├── adoption_procedures/
+│   │   ├── foster_care_procedures/
+│   │   └── emergency_protocols/
+│   ├── 02_BEST_PRACTICES/
+│   │   ├── case_management/
+│   │   ├── family_assessment/
+│   │   └── crisis_intervention/
+│   ├── 03_CASE_STUDIES/
+│   │   ├── successful_cases/
+│   │   ├── challenging_cases/
+│   │   └── lessons_learned/
+│   └── 04_QUICK_REFERENCE/
+│       ├── flowcharts/
+│       ├── decision_trees/
+│       └── contact_matrices/
+├── 07_ΕΚΠΑΙΔΕΥΤΙΚΟ_ΥΛΙΚΟ/
+│   ├── 01_TRAINING_MODULES/
+│   │   ├── new_employee_orientation/
+│   │   ├── continuing_education/
+│   │   └── specialized_training/
+│   ├── 02_WEBINARS_RECORDINGS/
+│   │   ├── live_sessions/
+│   │   ├── archived_content/
+│   │   └── presentation_materials/
+│   ├── 03_CERTIFICATION_MATERIALS/
+│   │   ├── exam_preparation/
+│   │   ├── certification_requirements/
+│   │   └── renewal_processes/
+│   └── 04_LEARNING_PATHS/
+│       ├── career_development/
+│       └── skill_assessments/
+├── 08_ΤΗΛΕΦΩΝΙΚΟΙ_ΚΑΤΑΛΟΓΟΙ/
+│   ├── 01_REGIONAL_OFFICES/
+│   │   ├── directorate_contacts/
+│   │   ├── field_office_contacts/
+│   │   └── management_contacts/
+│   ├── 02_PARTNER_ORGANIZATIONS/
+│   │   ├── ngo_contacts/
+│   │   ├── healthcare_providers/
+│   │   └── legal_services/
+│   ├── 03_EMERGENCY_CONTACTS/
+│   │   ├── crisis_hotlines/
+│   │   ├── after_hours_contacts/
+│   │   └── escalation_procedures/
+│   └── 04_SPECIALIZED_SERVICES/
+│       ├── translators_interpreters/
+│       ├── mental_health_professionals/
+│       └── child_advocacy_centers/
+├── 09_NEWS_FEEDS_SOURCES/
+│   ├── 01_MINISTRY_UPDATES/
+│   │   ├── policy_announcements/
+│   │   ├── budget_updates/
+│   │   └── organizational_changes/
+│   ├── 02_LEGISLATIVE_CHANGES/
+│   │   ├── proposed_legislation/
+│   │   ├── enacted_laws/
+│   │   └── regulatory_updates/
+│   ├── 03_INDUSTRY_NEWS/
+│   │   ├── research_publications/
+│   │   ├── conference_proceedings/
+│   │   └── professional_developments/
+│   └── 04_RSS_FEEDS/
+│       ├── automated_feeds/
+│       └── curated_content/
+├── 10_PROFESSIONAL_FORUM/
+│   ├── 01_CASE_DISCUSSIONS/
+│   │   ├── active_discussions/
+│   │   ├── closed_discussions/
+│   │   └── expert_consultations/
+│   ├── 02_LEGAL_QA/
+│   │   ├── legal_interpretations/
+│   │   ├── precedent_discussions/
+│   │   └── expert_opinions/
+│   ├── 03_REGIONAL_GROUPS/
+│   │   ├── attica_region/
+│   │   ├── thessaloniki_region/
+│   │   ├── patras_region/
+│   │   └── other_regions/
+│   ├── 04_ANNOUNCEMENTS/
+│   │   ├── system_updates/
+│   │   ├── training_opportunities/
+│   │   └── policy_changes/
+│   └── 05_RESOURCE_SHARING/
+│       ├── document_sharing/
+│       ├── template_exchange/
+│       └── best_practice_sharing/
+├── 11_SYSTEM_ADMIN/
+│   ├── user_management/
+│   ├── backup_recovery/
+│   ├── security_logs/
+│   └── system_configurations/
+└── 12_FUTURE_MODULES/
+    ├── dashboard_components/
+    ├── chat_integration/
+    ├── case_management_system/
+    └── mobile_app_api/
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Flow -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-route text-blue-600 mr-3"></i>
+                    3. Navigation Flow
+                </h2>
+                
+                <div class="space-y-8">
+                    <!-- User Journey 1 -->
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-blue-800 mb-4">User Journey: Conducting a Facility Inspection</h3>
+                        <div class="flex flex-wrap items-center space-x-2 text-sm">
+                            <div class="bg-blue-200 px-3 py-1 rounded">Login</div>
+                            <i class="fas fa-arrow-right text-blue-600"></i>
+                            <div class="bg-blue-200 px-3 py-1 rounded">ΕΚΘΕΣΕΙΣ_ΕΛΕΓΧΩΝ</div>
+                            <i class="fas fa-arrow-right text-blue-600"></i>
+                            <div class="bg-blue-200 px-3 py-1 rounded">Inspection Templates</div>
+                            <i class="fas fa-arrow-right text-blue-600"></i>
+                            <div class="bg-blue-200 px-3 py-1 rounded">Facility Inspection</div>
+                            <i class="fas fa-arrow-right text-blue-600"></i>
+                            <div class="bg-green-200 px-3 py-1 rounded">Download Template</div>
+                        </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <strong>Cross-linking:</strong> Links to ΟΔΗΓΟΙ_ΕΦΑΡΜΟΓΗΣ for procedural guidance and ΤΗΛΕΦΩΝΙΚΟΙ_ΚΑΤΑΛΟΓΟΙ for facility contacts
+                        </div>
+                    </div>
+
+                    <!-- User Journey 2 -->
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-green-800 mb-4">User Journey: Researching Adoption Legislation</h3>
+                        <div class="flex flex-wrap items-center space-x-2 text-sm">
+                            <div class="bg-green-200 px-3 py-1 rounded">Search Bar</div>
+                            <i class="fas fa-arrow-right text-green-600"></i>
+                            <div class="bg-green-200 px-3 py-1 rounded">"Adoption Laws 2024"</div>
+                            <i class="fas fa-arrow-right text-green-600"></i>
+                            <div class="bg-green-200 px-3 py-1 rounded">Results Page</div>
+                            <i class="fas fa-arrow-right text-green-600"></i>
+                            <div class="bg-green-200 px-3 py-1 rounded">ΝΟΜΟΘΕΣΙΑ_ΚΟΙΝΩΝΙΚΗΣ_ΜΕΡΙΜΝΑΣ</div>
+                            <i class="fas fa-arrow-right text-green-600"></i>
+                            <div class="bg-yellow-200 px-3 py-1 rounded">Specific Document</div>
+                        </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <strong>Cross-linking:</strong> Related forms in ΕΝΤΥΠΑ_ΑΙΤΗΣΕΩΝ and implementation guides in ΟΔΗΓΟΙ_ΕΦΑΡΜΟΓΗΣ
+                        </div>
+                    </div>
+
+                    <!-- User Journey 3 -->
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-purple-800 mb-4">User Journey: Participating in Professional Discussion</h3>
+                        <div class="flex flex-wrap items-center space-x-2 text-sm">
+                            <div class="bg-purple-200 px-3 py-1 rounded">Login</div>
+                            <i class="fas fa-arrow-right text-purple-600"></i>
+                            <div class="bg-purple-200 px-3 py-1 rounded">Professional Forum</div>
+                            <i class="fas fa-arrow-right text-purple-600"></i>
+                            <div class="bg-purple-200 px-3 py-1 rounded">Case Discussions</div>
+                            <i class="fas fa-arrow-right text-purple-600"></i>
+                            <div class="bg-purple-200 px-3 py-1 rounded">Active Thread</div>
+                            <i class="fas fa-arrow-right text-purple-600"></i>
+                            <div class="bg-orange-200 px-3 py-1 rounded">Contribute Response</div>
+                        </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <strong>Cross-linking:</strong> Reference documents from legislation, forms, and guides; link to relevant training materials
+                        </div>
+                    </div>
+
+                    <!-- Cross-Linking Matrix -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Cross-Linking Strategy</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-medium text-gray-700 mb-3">High-Priority Links</h4>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li>• Legislation ↔ Application Forms</li>
+                                    <li>• Inspection Reports ↔ Procedural Guides</li>
+                                    <li>• Forum Discussions ↔ All Resource Sections</li>
+                                    <li>• Educational Material ↔ Best Practice Guides</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700 mb-3">Contextual Links</h4>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li>• Search Results → Related Documents</li>
+                                    <li>• Document Views → Similar Resources</li>
+                                    <li>• User Profiles → Relevant Content</li>
+                                    <li>• Recent Updates → Impact Areas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Structure Recommendations -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-database text-blue-600 mr-3"></i>
+                    4. Data Structure Recommendations
+                </h2>
+                
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Naming Conventions -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-tags text-blue-500 mr-2"></i>
+                            Folder Naming Conventions
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium text-gray-700">Primary Folders</h4>
+                                <code class="bg-gray-200 px-2 py-1 rounded text-sm">##_FOLDER_NAME_GREEK</code>
+                                <p class="text-sm text-gray-600 mt-1">Two-digit prefix for ordering, uppercase with underscores</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700">Subfolders</h4>
+                                <code class="bg-gray-200 px-2 py-1 rounded text-sm">##_category_name</code>
+                                <p class="text-sm text-gray-600 mt-1">Two-digit prefix, lowercase with underscores</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700">Archive Folders</h4>
+                                <code class="bg-gray-200 px-2 py-1 rounded text-sm">YYYY_archived_content</code>
+                                <p class="text-sm text-gray-600 mt-1">Year prefix for chronological organization</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- File Naming Templates -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-file-signature text-green-500 mr-2"></i>
+                            File Naming Templates
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium text-gray-700">Documents</h4>
+                                <code class="bg-gray-200 px-2 py-1 rounded text-sm block">TYPE_THEME_YYYY_vX.ext</code>
+                                <p class="text-sm text-gray-600 mt-1">Example: LAW_ADOPTION_2024_v2.pdf</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700">Forms</h4>
+                                <code class="bg-gray-200 px-2 py-1 rounded text-sm block">FORM_PURPOSE_YYYY_vX.ext</code>
+                                <p class="text-sm text-gray-600 mt-1">Example: FORM_FOSTER_CARE_APPLICATION_2024_v1.docx</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700">Reports</h4>
+                                <code class="bg-gray-200 px-2 py-1 rounded text-sm block">REPORT_TYPE_YYYY_MM_vX.ext</code>
+                                <p class="text-sm text-gray-600 mt-1">Example: REPORT_FACILITY_INSPECTION_2024_03_v1.xlsx</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700">Training Materials</h4>
+                                <code class="bg-gray-200 px-2 py-1 rounded text-sm block">TRAINING_TOPIC_YYYY_vX.ext</code>
+                                <p class="text-sm text-gray-600 mt-1">Example: TRAINING_CHILD_PROTECTION_2024_v3.pptx</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metadata Standards -->
+                <div class="mt-8 bg-blue-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-blue-800 mb-4 flex items-center">
+                        <i class="fas fa-info-circle text-blue-600 mr-2"></i>
+                        Metadata Standards
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-medium text-blue-700 mb-2">Required Fields</h4>
+                            <ul class="text-sm text-blue-600 space-y-1">
+                                <li>• Document Title</li>
+                                <li>• Creation Date</li>
+                                <li>• Last Modified</li>
+                                <li>• Author/Department</li>
+                                <li>• Document Type</li>
+                                <li>• Version Number</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-blue-700 mb-2">Optional Fields</h4>
+                            <ul class="text-sm text-blue-600 space-y-1">
+                                <li>• Keywords/Tags</li>
+                                <li>• Subject Categories</li>
+                                <li>• Related Documents</li>
+                                <li>• Review Date</li>
+                                <li>• Access Level</li>
+                                <li>• Geographic Scope</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-blue-700 mb-2">System Fields</h4>
+                            <ul class="text-sm text-blue-600 space-y-1">
+                                <li>• File Size</li>
+                                <li>• Download Count</li>
+                                <li>• Last Accessed</li>
+                                <li>• Checksum/Hash</li>
+                                <li>• Backup Status</li>
+                                <li>• Index Status</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Version Control -->
+                <div class="mt-8 bg-yellow-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-yellow-800 mb-4 flex items-center">
+                        <i class="fas fa-code-branch text-yellow-600 mr-2"></i>
+                        Version Control Strategy
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-medium text-yellow-700 mb-3">Version Numbering</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex items-center space-x-2">
+                                    <code class="bg-yellow-200 px-2 py-1 rounded">v1.0</code>
+                                    <span class="text-yellow-700">Initial release</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <code class="bg-yellow-200 px-2 py-1 rounded">v1.1</code>
+                                    <span class="text-yellow-700">Minor updates</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <code class="bg-yellow-200 px-2 py-1 rounded">v2.0</code>
+                                    <span class="text-yellow-700">Major revision</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <code class="bg-yellow-200 px-2 py-1 rounded">v2.0_DRAFT</code>
+                                    <span class="text-yellow-700">Work in progress</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-yellow-700 mb-3">Archive Policy</h4>
+                            <ul class="text-sm text-yellow-600 space-y-1">
+                                <li>• Keep last 3 versions active</li>
+                                <li>• Archive older versions annually</li>
+                                <li>• Maintain legal documents indefinitely</li>
+                                <li>• Compress archived content</li>
+                                <li>• Create backup checksums</li>
+                                <li>• Document version change reasons</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Recommendations -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-rocket text-blue-600 mr-3"></i>
+                    Implementation Recommendations
+                </h2>
+                
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Phase 1 -->
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-green-800 mb-4 flex items-center">
+                            <i class="fas fa-play text-green-600 mr-2"></i>
+                            Phase 1: Core Infrastructure
+                        </h3>
+                        <ul class="space-y-2 text-sm text-green-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                <span>Implement secure authentication system</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                <span>Set up basic folder structure</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                <span>Deploy search functionality</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                <span>Migrate existing documents</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                <span>Establish naming conventions</span>
+                            </li>
+                        </ul>
+                        <div class="mt-4 text-xs text-green-600">
+                            <strong>Timeline:</strong> 4-6 weeks
+                        </div>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-blue-800 mb-4 flex items-center">
+                            <i class="fas fa-cogs text-blue-600 mr-2"></i>
+                            Phase 2: Enhanced Features
+                        </h3>
+                        <ul class="space-y-2 text-sm text-blue-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-blue-500 mr-2 mt-1"></i>
+                                <span>Launch professional forum</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-blue-500 mr-2 mt-1"></i>
+                                <span>Implement cross-linking system</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-blue-500 mr-2 mt-1"></i>
+                                <span>Add metadata management</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-blue-500 mr-2 mt-1"></i>
+                                <span>Deploy news feed system</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-blue-500 mr-2 mt-1"></i>
+                                <span>Create user training materials</span>
+                            </li>
+                        </ul>
+                        <div class="mt-4 text-xs text-blue-600">
+                            <strong>Timeline:</strong> 6-8 weeks
+                        </div>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-purple-800 mb-4 flex items-center">
+                            <i class="fas fa-chart-line text-purple-600 mr-2"></i>
+                            Phase 3: Advanced Analytics
+                        </h3>
+                        <ul class="space-y-2 text-sm text-purple-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-clock text-purple-500 mr-2 mt-1"></i>
+                                <span>Deploy usage analytics dashboard</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-clock text-purple-500 mr-2 mt-1"></i>
+                                <span>Implement content recommendations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-clock text-purple-500 mr-2 mt-1"></i>
+                                <span>Add advanced search filters</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-clock text-purple-500 mr-2 mt-1"></i>
+                                <span>Create mobile-responsive design</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-clock text-purple-500 mr-2 mt-1"></i>
+                                <span>Optimize performance</span>
+                            </li>
+                        </ul>
+                        <div class="mt-4 text-xs text-purple-600">
+                            <strong>Timeline:</strong> 4-6 weeks
+                        </div>
+                    </div>
+
+                    <!-- Future Enhancements -->
+                    <div class="bg-orange-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-orange-800 mb-4 flex items-center">
+                            <i class="fas fa-lightbulb text-orange-600 mr-2"></i>
+                            Future Enhancements
+                        </h3>
+                        <ul class="space-y-2 text-sm text-orange-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-orange-500 mr-2 mt-1"></i>
+                                <span>Case management integration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-orange-500 mr-2 mt-1"></i>
+                                <span>Real-time chat system</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-orange-500 mr-2 mt-1"></i>
+                                <span>AI-powered document analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-orange-500 mr-2 mt-1"></i>
+                                <span>Mobile application</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-orange-500 mr-2 mt-1"></i>
+                                <span>API for third-party integrations</span>
+                            </li>
+                        </ul>
+                        <div class="mt-4 text-xs text-orange-600">
+                            <strong>Timeline:</strong> Future iterations
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Metrics -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-chart-bar text-blue-600 mr-3"></i>
+                    Success Metrics & KPIs
+                </h2>
+                
+                <div class="grid lg:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-blue-800 mb-4">Usage Metrics</h3>
+                        <ul class="space-y-2 text-sm text-blue-700">
+                            <li>• Daily active users</li>
+                            <li>• Document downloads</li>
+                            <li>• Search queries performed</li>
+                            <li>• Forum participation rate</li>
+                            <li>• Time spent on portal</li>
+                            <li>• Mobile vs desktop usage</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-green-800 mb-4">Content Metrics</h3>
+                        <ul class="space-y-2 text-sm text-green-700">
+                            <li>• Document freshness</li>
+                            <li>• Content update frequency</li>
+                            <li>• Most accessed resources</li>
+                            <li>• Search success rate</li>
+                            <li>• Cross-link utilization</li>
+                            <li>• User-generated content</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold text-purple-800 mb-4">Quality Metrics</h3>
+                        <ul class="space-y-2 text-sm text-purple-700">
+                            <li>• User satisfaction scores</li>
+                            <li>• Support ticket volume</li>
+                            <li>• System uptime</li>
+                            <li>• Page load speeds</li>
+                            <li>• Error rates</li>
+                            <li>• Training completion rates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-300">Social Welfare Portal - Information Architecture Design</p>
+            <p class="text-gray-400 text-sm mt-2">Designed for scalability, usability, and professional excellence</p>
+        </div>
+    </footer>
+</body>
+</html>

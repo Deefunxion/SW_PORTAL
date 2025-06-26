@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Πύλη Κοινωνικής Μέριμνας - Δομή & Αρχιτεκτονική</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+body {
+  background: #f3f4f8;
+  color: #21242a;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+header {
+  background: #28292d;
+  color: #fff;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 4px 16px rgba(20,20,20,0.11);
+  padding: 2rem 0 1rem 0;
+  margin-bottom: 2rem;
+}
+a, .btn, button {
+  font-weight: 600;
+  border-radius: 1.5em;
+  background: #e5e6ea;
+  color: #232426 !important;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
+  padding: 0.7em 1.7em;
+  margin: 0.15em 0.4em;
+  transition: background 0.18s, color 0.12s;
+}
+a:hover, .btn:hover, button:hover {
+  background: #d0d1d6;
+  color: #1a1a1a !important;
+}
+        .folder-icon { color: #f59e0b; }
+        .file-icon { color: #6b7280; }
+        .section-card {
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        .section-card:hover {
+            transform: translateY(-2px);
+        }
+        .clickable-folder {
+            transition: all 0.2s ease-in-out;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            margin: 0.1rem 0;
+            display: block;
+            color: #374151 !important;
+            background: transparent !important;
+            font-weight: normal !important;
+        }
+        .clickable-folder:hover {
+            background-color: rgba(0, 0, 0, 0.05) !important;
+            transform: translateX(2px);
+        }
+        .file-links-section {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            background: #f9fafb;
+        }
+        .file-link {
+            display: block;
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            background: white;
+            border-radius: 0.375rem;
+            text-decoration: none !important;
+            color: #374151 !important;
+            transition: all 0.2s;
+            border-left: 3px solid #3b82f6;
+            font-weight: normal !important;
+        }
+        .file-link:hover {
+            background: #e5e7eb !important;
+            transform: translateX(2px);
+        }
+        .file-link i {
+            color: #6b7280;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center space-x-4">
+                <i class="fas fa-sitemap text-3xl"></i>
+                <div>
+                    <h1 class="text-3xl font-bold">Πύλη Κοινωνικής Μέριμνας</h1>
+                    <p class="text-blue-200">Δομή Αρχείων & Πληροφοριακή Αρχιτεκτονική</p>
+                </div>
+            </div>
+        </div>
+    </header>
+<div style="text-align:right; margin: 1.5rem 0;">
+  <a href="http://localhost/forum2/public" target="_blank" style="background:#2b86c5; color:#fff; font-weight:bold; border-radius:1.5em; padding:0.7em 2em; box-shadow:0 2px 8px #789;">
+    <i class="fas fa-comments" style="margin-right:0.6em"></i> Forum Επαγγελματιών
+  </a>
+</div>
+    <div class="container mx-auto px-6 py-8">
+        <!-- Overview -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-info-circle text-blue-600 mr-3"></i>
+                    Επισκόπηση Πύλης
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-3">Ομάδα Στόχος</h3>
+                        <p class="text-gray-600">Κοινωνικοί λειτουργοί που εργάζονται σε περιφερειακές διευθύνσεις κοινωνικής μέριμνας σε όλη την Ελλάδα</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-3">Βασικές Λειτουργίες</h3>
+                        <ul class="text-gray-600 space-y-1">
+                            <li>• Διαχείριση ελέγχων & αναφορών</li>
+                            <li>• Διαχείριση υιοθεσίας & αναδοχής</li>
+                            <li>• Οδηγίες νομοθετικής συμμόρφωσης</li>
+                            <li>• Επαγγελματική ανάπτυξη & εκπαίδευση</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="mb-12">
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <i class="fas fa-gavel text-3xl text-red-600 mb-3"></i>
+                    <h3 class="text-xl font-bold text-gray-800">65+</h3>
+                    <p class="text-gray-600">Νομοθετικά Κείμενα</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <i class="fas fa-file-alt text-3xl text-yellow-600 mb-3"></i>
+                    <h3 class="text-xl font-bold text-gray-800">32</h3>
+                    <p class="text-gray-600">Έντυπα Αιτήσεων</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <i class="fas fa-clipboard-check text-3xl text-orange-600 mb-3"></i>
+                    <h3 class="text-xl font-bold text-gray-800">15</h3>
+                    <p class="text-gray-600">Εκθέσεις Ελέγχων</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <i class="fas fa-graduation-cap text-3xl text-indigo-600 mb-3"></i>
+                    <h3 class="text-xl font-bold text-gray-800">20+</h3>
+                    <p class="text-gray-600">Εκπαιδευτικά Υλικά</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Sections with Direct Links -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                    <i class="fas fa-folder-tree text-blue-600 mr-3"></i>
+                    Κύριες Θεματικές Ενότητες - Απευθείας Πρόσβαση
+                </h2>
+                
+                <div class="grid lg:grid-cols-1 gap-8">
+                    <!-- Αποφάσεις Αδειοδότησης -->
+                    <div class="section-card bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border border-purple-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-certificate text-purple-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-purple-800">Αποφάσεις Αδειοδότησης</h3>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="space-y-2 text-sm">
+                                <a href="/SW%20PORTAL/%CE%91%CE%A0%CE%9F%CE%A6%CE%91%CE%A3%CE%95%CE%99%CE%A3_%CE%91%CE%94%CE%95%CE%99%CE%9F%CE%94%CE%9F%CE%A4%CE%97%CE%A3%CE%97%CE%A3/%CE%9A%CE%91%CE%91%20-%20%CE%9A%CE%94%CE%97%CE%A6/" class="clickable-folder" target="_blank">
+                                    <i class="fas fa-folder text-purple-500 mr-2"></i>
+                                    <span>ΚΑΑ - ΚΔΗΦ (6 αρχεία)</span>
+                                </a>
+                                <a href="/SW%20PORTAL/%CE%91%CE%A0%CE%9F%CE%A6%CE%91%CE%A3%CE%95%CE%99%CE%A3_%CE%91%CE%94%CE%95%CE%99%CE%9F%CE%94%CE%9F%CE%A4%CE%97%CE%A3%CE%97%CE%A3/%CE%9A%CE%94%CE%91%CE%A0%20-%20%CE%9A%CE%94%CE%91%CE%A0%20%CE%91%CE%BC%CE%B5%CE%91/" class="clickable-folder" target="_blank">
+                                    <i class="fas fa-folder text-purple-500 mr-2"></i>
+                                    <span>ΚΔΑΠ - ΚΔΑΠ ΑμεΑ (7 αρχεία)</span>
+                                </a>
+                                <a href="/SW%20PORTAL/%CE%91%CE%A0%CE%9F%CE%A6%CE%91%CE%A3%CE%95%CE%99%CE%A3_%CE%91%CE%94%CE%95%CE%99%CE%9F%CE%94%CE%9F%CE%A4%CE%97%CE%A3%CE%97%CE%A3/%CE%9A%CE%97%CE%A6%CE%97/" class="clickable-folder" target="_blank">
+                                    <i class="fas fa-folder text-purple-500 mr-2"></i>
+                                    <span>ΚΗΦΗ (7 αρχεία)</span>
+                                </a>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <a href="/SW%20PORTAL/%CE%91%CE%A0%CE%9F%CE%A6%CE%91%CE%A3%CE%95%CE%99%CE%A3_%CE%91%CE%94%CE%95%CE%99%CE%9F%CE%94%CE%9F%CE%A4%CE%97%CE%A3%CE%97%CE%A3/%CE%9C%CE%A6%CE%97/" class="clickable-folder" target="_blank">
+                                    <i class="fas fa-folder text-purple-500 mr-2"></i>
+                                    <span>ΜΦΗ (5 αρχεία)</span>
+                                </a>
+                                <a href="/SW%20PORTAL/%CE%91%CE%A0%CE%9F%CE%A6%CE%91%CE%A3%CE%95%CE%99%CE%A3_%CE%91%CE%94%CE%95%CE%99%CE%9F%CE%94%CE%9F%CE%A4%CE%97%CE%A3%CE%97%CE%A3/%CE%A0%CE%91%CE%99%CE%94%CE%99%CE%9A%CE%95%CE%A3%20%CE%95%CE%9E%CE%9F%CE%A7%CE%95%CE%A3/" class="clickable-folder" target="_blank">
+                                    <i class="fas fa-folder text-purple-500 mr-2"></i>
+                                    <span>Παιδικές Εξοχές (3 αρχεία)</span>
+                                </a>
+                                <a href="/SW%20PORTAL/%CE%91%CE%A0%CE%9F%CE%A6%CE%91%CE%A3%CE%95%CE%99%CE%A3_%CE%91%CE%94%CE%95%CE%99%CE%9F%CE%94%CE%9F%CE%A4%CE%97%CE%A3%CE%97%CE%A3/%CE%A3%CE%A5%CE%94/" class="clickable-folder" target="_blank">
+                                    <i class="fas fa-folder text-purple-500 mr-2"></i>
+                                    <span>ΣΥΔ (7 αρχεία)</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Νομοθεσία -->
+                    <div class="section-card bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg border border-red-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-gavel text-red-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-red-800">Νομοθεσία Κοινωνικής Μέριμνας</h3>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="space-y-2 text-sm">
+                                <a href="/SW%20PORTAL/%CE%9D%CE%9F%CE%9C%CE%9F%CE%98%CE%95%CE%A3%CE%99%CE%91_%CE%9A%CE%9F%CE%99%CE%9D%CE%A9%CE%9D%CE%99%CE%9A%CE%97%CE%A3_%CE%9C%CE%95%CE%A1%CE%99%CE%9C%CE%9D%CE%91%CE%A3/%CE%92%CE%A3%CE%A6%CE%9F%CE%A0/" class="clickable-folder" target="_blank">
+                                    <i class="fas fa-folder text-red-500 mr-2"></i>
+                                    <span>ΒΣΦΟΠ (2 αρχεία)</span>
+                                </a>
+                                <a href="/SW%20PORTAL/%CE%9D%CE%9F%CE%9C%CE%9F%CE%98%CE%95%CE%A3%CE%99%CE%91_%CE%9A%CE%9F%CE%99%CE%9D%CE%A9%CE%9D%CE%99%CE%9A%CE%97%CE%A3_%CE%9C%CE%95%CE%A1%CE%99%CE%9C%CE%9D%CE%91%CE%A3/%CE%9A%CE%91%CE%91%20-%20%CE%9A%CE%94%CE%97%CE%A6/" class="clickable-folder" target="_blank">
+                                    <i class="fas fa-folder text-red-500 mr-2"></i>
+                                    <span>ΚΑΑ - ΚΔΗΦ (12 αρχεία)</span>
+                                </a>
+                                <a href="/SW%20PORTAL/%CE%9D%CE%9F%CE%9C%CE%9F%CE%98%CE%95%CE%A3%CE%99%CE%91_%CE%9A%CE%9F%CE%99%CE%9D%CE%A9%CE%9D%CE%99%CE%9A%CE%97%CE%A3_%CE%9C%CE%95%CE%A1%CE%99%CE%9C%CE%9D%CE%91%CE%A3/%CE%9A%CE%94%CE%91%CE%A0%20-%20%CE%9A%CE%94%CE%91%CE%A0%20%CE%91%CE%BC%CE%B5%CE%91/" class="clickable-folder" target="_blank">
+                                    <i class="fas fa-folder text-red-500 mr-2"></i>
+                                    <span>ΚΔΑΠ - ΚΔΑΠ ΑμεΑ (11 αρχεία)</span>
+                                </a>
+                                <a href="/SW%20PORTAL/%CE%9D%CE%9F%CE%9C%CE%9F%CE%98%CE%95%CE%A3%CE%99%CE%91_%CE%9A%CE%9F%CE%99%CE%9D%CE%A9%CE%9D%CE%99%CE%9A%CE%97%CE%A3_%CE%9C%CE%95%CE%A1%CE%99%CE%9C%CE%9D%CE%91%CE%A3/%CE%9A%CE%97%CE%A6%CE%97/" class="clickable-folder" target="_blank">
+                                    <i class="fas fa-folder text-red-500 mr-2"></i>
+                                    <span>ΚΗΦΗ (13 αρχεία)</span>
+                                </a>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <a href="/SW%20PORTAL/%CE%9D%CE%9F%CE%9C%CE%9F%CE%98%CE%95%CE%A3%CE%99%CE%91_%CE%9A%CE%9F%CE%99%CE%9D%CE%A9%CE%9D%CE%99%CE%9A%CE%97%CE%A3_%CE%9C%CE%95%CE%A1%CE%99%CE%9C%CE%9D%CE%91%CE%A3/%CE%9C%CE%A6%CE%97/" class="clickable-folder" target="_blank">
+                                    <i class="fas fa-folder text-red-500 mr-2"></i>
+                                    <span>ΜΦΗ (9 αρχεία)</span>
+                                </a>
+                                <a href="/SW%20PORTAL/%CE%9D%CE%9F%CE%9C%CE%9F%CE%98%CE%95%CE%A3%CE%99%CE%91_%CE%9A%CE%9F%CE%99%CE%9D%CE%A9%CE%9D%CE%99%CE%9A%CE%97%CE%A3_%CE%9C%CE%95%CE%A1%CE%99%CE%9C%CE%9D%CE%91%CE%A3/%CE%A0%CE%91%CE%99%CE%94%CE%99%CE%9A%CE%95%CE%A3%20%CE%95%CE%9E%CE%9F%CE%A7%CE%95%CE%A3/" class="clickable-folder" target="_blank">
+                                    <i class="fas fa-folder text-red-500 mr-2"></i>
+                                    <span>Παιδικές Εξοχές (8 αρχεία)</span>
+                                </a>
+                                <a href="/SW%20PORTAL/%CE%9D%CE%9F%CE%9C%CE%9F%CE%98%CE%95%CE%A3%CE%99%CE%91_%CE%9A%CE%9F%CE%99%CE%9D%CE%A9%CE%9D%CE%99%CE%9A%CE%97%CE%A3_%CE%9C%CE%95%CE%A1%CE%99%CE%9C%CE%9D%CE%91%CE%A3/%CE%A3%CE%A5%CE%94/" class="clickable-folder" target="_blank">
+                                    <i class="fas fa-folder text-red-500 mr-2"></i>
+                                    <span>ΣΥΔ (10 αρχεία)</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Έντυπα Αιτήσεων -->
+                    <div class="section-card bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-lg border border-yellow-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-file-alt text-yellow-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-yellow-800">Έντυπα Αιτήσεων</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <a href="/SW%20PORTAL/%CE%95%CE%9D%CE%A4%CE%A5%CE%A0%CE%91_%CE%91%CE%99%CE%A4%CE%97%CE%A3%CE%95%CE%A9%CE%9D/%CE%91%CE%B9%CF%84%CE%AE%CF%83%CE%B5%CE%B9%CF%82_%CE%A4%CE%B5%CE%BB%CE%B9%CE%BA%CE%AD%CF%82/" class="clickable-folder" target="_blank">
+                                <i class="fas fa-folder text-yellow-500 mr-2"></i>
+                                <span>Αιτήσεις Τελικές (32 αρχεία)</span>
+                            </a>
+                            <div class="file-links-section mt-4">
+                                <h4 class="font-semibold mb-2">Αρχεία Εντύπων:</h4>
+                                <a href="/SW%20PORTAL/%CE%95%CE%9D%CE%A4%CE%A5%CE%A0%CE%91_%CE%91%CE%99%CE%A4%CE%97%CE%A3%CE%95%CE%A9%CE%9D/%CE%91%CE%B9%CF%84%CE%AE%CF%83%CE%B5%CE%B9%CF%82_%CE%A4%CE%B5%CE%BB%CE%B9%CE%BA%CE%AD%CF%82/2736_KM11_NEO.doc" class="file-link" target="_blank">
+                                    <i class="fas fa-file-word"></i>2736_KM11_NEO.doc
+                                </a>
+                                <a href="/SW%20PORTAL/%CE%95%CE%9D%CE%A4%CE%A5%CE%A0%CE%91_%CE%91%CE%99%CE%A4%CE%97%CE%A3%CE%95%CE%A9%CE%9D/%CE%91%CE%B9%CF%84%CE%AE%CF%83%CE%B5%CE%B9%CF%82_%CE%A4%CE%B5%CE%BB%CE%B9%CE%BA%CE%AD%CF%82/2736_km13.doc" class="file-link" target="_blank">
+                                    <i class="fas fa-file-word"></i>2736_km13.doc
+                                </a>
+                                <a href="/SW%20PORTAL/%CE%95%CE%9D%CE%A4%CE%A5%CE%A0%CE%91_%CE%91%CE%99%CE%A4%CE%97%CE%A3%CE%95%CE%A9%CE%9D/%CE%91%CE%B9%CF%84%CE%AE%CF%83%CE%B5%CE%B9%CF%82_%CE%A4%CE%B5%CE%BB%CE%B9%CE%BA%CE%AD%CF%82/%CE%91%CE%AF%CF%84%CE%B7%CF%83%CE%B7%20-%20%CE%A5%CF%80%CE%B5%CF%8D%CE%B8%CF%85%CE%BD%CE%B7%20%CE%94%CE%AE%CE%BB%CF%89%CF%83%CE%B7.doc" class="file-link" target="_blank">
+                                    <i class="fas fa-file-word"></i>Αίτηση - Υπεύθυνη Δήλωση.doc
+                                </a>
+                                <div class="text-center mt-2">
+                                    <span class="text-sm text-gray-500">...και άλλα 29 αρχεία</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Εκθέσεις Ελέγχων -->
+                    <div class="section-card bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg border border-orange-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clipboard-check text-orange-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-orange-800">Εκθέσεις Ελέγχων</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <a href="/SW%20PORTAL/%CE%95%CE%9A%CE%98%CE%95%CE%A3%CE%95%CE%99%CE%A3_%CE%95%CE%9B%CE%95%CE%93%CE%A7%CE%A9%CE%9D/%CE%95%CE%BA%CE%B8%CE%AD%CF%83%CE%B5%CE%B9%CF%82_%CE%A4%CE%B5%CE%BB%CE%B9%CE%BA%CE%AD%CF%82/" class="clickable-folder" target="_blank">
+                                <i class="fas fa-folder text-orange-500 mr-2"></i>
+                                <span>Εκθέσεις Τελικές (15 αρχεία)</span>
+                            </a>
+                            <div class="file-links-section mt-4">
+                                <h4 class="font-semibold mb-2">Αρχεία Εκθέσεων:</h4>
+                                <a href="/SW%20PORTAL/%CE%95%CE%9A%CE%98%CE%95%CE%A3%CE%95%CE%99%CE%A3_%CE%95%CE%9B%CE%95%CE%93%CE%A7%CE%A9%CE%9D/%CE%95%CE%BA%CE%B8%CE%AD%CF%83%CE%B5%CE%B9%CF%82_%CE%A4%CE%B5%CE%BB%CE%B9%CE%BA%CE%AD%CF%82/%CE%88%CE%BD%CF%84%CF%85%CF%80%CE%BF%20%CE%95%CE%BB%CE%AD%CE%B3%CF%87%CE%BF%CF%85%20%CE%A3%CF%84%CE%AD%CE%B3%CE%B7%CF%82%20%CE%A5%CF%80%CE%BF%CF%83%CF%84%CE%B7%CF%81%CE%B9%CE%B6%CF%8C%CE%BC%CE%B5%CE%BD%CE%B7%CF%82%20%CE%94%CE%B9%CE%B1%CE%B2%CE%AF%CF%89%CF%83%CE%B7%CF%82.docx" class="file-link" target="_blank">
+                                    <i class="fas fa-file-word"></i>Έντυπο Ελέγχου Στέγης Υποστηριζόμενης Διαβίωσης.docx
+                                </a>
+                                <a href="/SW%20PORTAL/%CE%95%CE%9A%CE%98%CE%95%CE%A3%CE%95%CE%99%CE%A3_%CE%95%CE%9B%CE%95%CE%93%CE%A7%CE%A9%CE%9D/%CE%95%CE%BA%CE%B8%CE%AD%CF%83%CE%B5%CE%B9%CF%82_%CE%A4%CE%B5%CE%BB%CE%B9%CE%BA%CE%AD%CF%82/%CE%94%CE%95%CE%9B%CE%A4%CE%99%CE%9F%20%CE%95%CE%9B%CE%95%CE%93%CE%A7%CE%9F%CE%A5%20%CE%9A%CE%91%CE%A4%CE%91%CE%A3%CE%9A%CE%97%CE%9D%CE%A9%CE%A3%CE%95%CE%A9%CE%9D%20COVID%2019%20%CE%A0%CE%A9%CE%9B%CE%99%CE%9D%CE%911.doc" class="file-link" target="_blank">
+                                    <i class="fas fa-file-word"></i>ΔΕΛΤΙΟ ΕΛΕΓΧΟΥ ΚΑΤΑΣΚΗΝΩΣΕΩΝ COVID 19.doc
+                                </a>
+                                <div class="text-center mt-2">
+                                    <span class="text-sm text-gray-500">...και άλλα 13 αρχεία</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Εκπαιδευτικό Υλικό -->
+                    <div class="section-card bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-lg border border-indigo-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-graduation-cap text-indigo-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-indigo-800">Εκπαιδευτικό Υλικό</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <a href="/SW%20PORTAL/%CE%95%CE%9A%CE%A0%CE%91%CE%99%CE%94%CE%95%CE%A5%CE%A4%CE%99%CE%9A%CE%9F_%CE%A5%CE%9B%CE%99%CE%9A%CE%9F/" class="clickable-folder" target="_blank">
+                                <i class="fas fa-folder text-indigo-500 mr-2"></i>
+                                <span>Κύρια Αρχεία (16 αρχεία)</span>
+                            </a>
+                            <a href="/SW%20PORTAL/%CE%95%CE%9A%CE%A0%CE%91%CE%99%CE%94%CE%95%CE%A5%CE%A4%CE%99%CE%9A%CE%9F_%CE%A5%CE%9B%CE%99%CE%9A%CE%9F/%CE%9F%CE%94%CE%97%CE%93%CE%99%CE%95%CE%A3%20%CE%A0%CE%A1%CE%9F%CE%A3%20%CE%99%CE%94%CE%A1%CE%A5%CE%9C%CE%91%CE%A4%CE%91%20%CE%A0%CE%91%CE%99%CE%94%CE%99%CE%9A%CE%97%CE%A3%20%CE%A0%CE%A1%CE%9F%CE%A3%CE%A4%CE%91%CE%A3%CE%99%CE%91%CE%A3/" class="clickable-folder" target="_blank">
+                                <i class="fas fa-folder text-indigo-500 mr-2"></i>
+                                <span>Οδηγίες Ιδρυμάτων Παιδικής Προστασίας (4 αρχεία)</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Τηλεφωνικοί Κατάλογοι -->
+                    <div class="section-card bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-lg border border-teal-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-address-book text-teal-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-teal-800">Τηλεφωνικοί Κατάλογοι</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <a href="/SW%20PORTAL/%CE%A4%CE%97%CE%9B%CE%95%CE%A6%CE%A9%CE%9D%CE%99%CE%9A%CE%9F%CE%99_%CE%9A%CE%91%CE%A4%CE%91%CE%9B%CE%9F%CE%93%CE%9F%CE%99/" class="clickable-folder" target="_blank">
+                                <i class="fas fa-folder text-teal-500 mr-2"></i>
+                                <span>6 αρχεία καταλόγων</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Αποφάσεις Συγκρότησης Επιτροπών -->
+                    <div class="section-card bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border border-green-200">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-users text-green-600 text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold text-green-800">Αποφάσεις Συγκρότησης Επιτροπών</h3>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <a href="/SW%20PORTAL/%CE%91%CE%A0%CE%9F%CE%A6%CE%91%CE%A3%CE%95%CE%99%CE%A3_%CE%A3%CE%A5%CE%93%CE%9A%CE%A1%CE%9F%CE%A4%CE%97%CE%A3%CE%97%CE%A3_%CE%95%CE%A0%CE%99%CE%A4%CE%A1%CE%9F%CE%A0%CE%A9%CE%9D_%CE%9A%CE%91%CE%99_%CE%9A%CE%9F%CE%99%CE%9D%CE%A9%CE%9D%CE%99%CE%9A%CE%9F%CE%A5_%CE%A3%CE%A5%CE%9C%CE%92%CE%9F%CE%A5%CE%9B%CE%9F%CE%A5/" class="clickable-folder" target="_blank">
+                                <i class="fas fa-folder text-green-500 mr-2"></i>
+                                <span>13 αρχεία αποφάσεων</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Access Links -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-external-link-alt text-blue-600 mr-3"></i>
+                    Γρήγορη Πρόσβαση
+                </h2>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <a href="/portal_links.html" class="flex items-center p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors" target="_blank">
+                        <i class="fas fa-list text-blue-600 mr-3"></i>
+                        <span class="font-semibold text-blue-800">Πλήρης Κατάλογος με Όλα τα Αρχεία</span>
+                    </a>
+                    <a href="/SW%20PORTAL/%CE%9D%CE%9F%CE%9C%CE%9F%CE%98%CE%95%CE%A3%CE%99%CE%91_%CE%9A%CE%9F%CE%99%CE%9D%CE%A9%CE%9D%CE%99%CE%9A%CE%97%CE%A3_%CE%9C%CE%95%CE%A1%CE%99%CE%9C%CE%9D%CE%91%CE%A3/" class="flex items-center p-4 bg-red-50 rounded-lg hover:bg-red-100 transition-colors" target="_blank">
+                        <i class="fas fa-gavel text-red-600 mr-3"></i>
+                        <span class="font-semibold text-red-800">Νομοθεσία</span>
+                    </a>
+                    <a href="/SW%20PORTAL/%CE%95%CE%9D%CE%A4%CE%A5%CE%A0%CE%91_%CE%91%CE%99%CE%A4%CE%97%CE%A3%CE%95%CE%A9%CE%9D/%CE%91%CE%B9%CF%84%CE%AE%CF%83%CE%B5%CE%B9%CF%82_%CE%A4%CE%B5%CE%BB%CE%B9%CE%BA%CE%AD%CF%82/" class="flex items-center p-4 bg-yellow-50 rounded-lg hover:bg-yellow-100 transition-colors" target="_blank">
+                        <i class="fas fa-file-alt text-yellow-600 mr-3"></i>
+                        <span class="font-semibold text-yellow-800">Έντυπα Αιτήσεων</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-600 py-8">
+            <p>&copy; 2025 Πύλη Κοινωνικής Μέριμνας - Ενημερώθηκε με URL-encoded συνδέσμους</p>
+            <p class="text-sm mt-2">Τελευταία ενημέρωση: Ιανουάριος 2025 - Όλοι οι σύνδεσμοι οδηγούν απευθείας στα αρχεία</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add click handlers for section cards
+        document.querySelectorAll('.section-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Don't trigger if clicking on a link inside the card
+                if (e.target.tagName === 'A' || e.target.closest('a')) {
+                    return;
+                }
+                
+                // Find the first link in the card and click it
+                const firstLink = this.querySelector('a[href]');
+                if (firstLink) {
+                    firstLink.click();
+                }
+            });
+        });
+
+        // Add visual feedback for clickable folders
+        document.querySelectorAll('.clickable-folder').forEach(folder => {
+            folder.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+            });
+            
+            folder.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = 'transparent';
+            });
+        });
+    </script>
+</body>
+</html>
+
