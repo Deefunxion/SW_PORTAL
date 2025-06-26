@@ -1,12 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Welfare Portal - Sitemap & Architecture</title>
+    <title>Πύλη Κοινωνικής Μέριμνας - Sitemap & Architecture</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
+body {
+  background: #f3f4f8;
+  color: #21242a;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+header {
+  background: #28292d;
+  color: #fff;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 4px 16px rgba(20,20,20,0.11);
+  padding: 2rem 0 1rem 0;
+  margin-bottom: 2rem;
+}
+a, .btn, button {
+  font-weight: 600;
+  border-radius: 1.5em;
+  background: #e5e6ea;
+  color: #232426 !important;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
+  padding: 0.7em 1.7em;
+  margin: 0.15em 0.4em;
+  transition: background 0.18s, color 0.12s;
+}
+a:hover, .btn:hover, button:hover {
+  background: #d0d1d6;
+  color: #1a1a1a !important;
+}
         @media print {
             body { print-color-adjust: exact; }
             .no-print { display: none !important; }
@@ -39,57 +69,56 @@
             <div class="flex items-center space-x-4">
                 <i class="fas fa-sitemap text-3xl"></i>
                 <div>
-                    <h1 class="text-3xl font-bold">Social Welfare Portal</h1>
-                    <p class="text-blue-200">Sitemap & Information Architecture Design</p>
+                    <h1 class="text-3xl font-bold">Πύλη Κοινωνικής Μέριμνας</h1>
+                    <p class="text-blue-200">Χάρτης Πλοήγησης και Δομή Πληροφόρησης</p>
                 </div>
             </div>
         </div>
     </header>
 <div class="text-right my-4">
   <a href="/forum2/public" class="bg-blue-600 text-white px-4 py-2 rounded">
-    <i class="fas fa-comments mr-2"></i>Forum Επαγγελματιών
+    <i class="fas fa-comments mr-2"></i>Φόρουμ Επαγγελματιών
   </a>
 </div>
-
     <div class="container mx-auto px-6 py-8">
         <!-- Overview -->
         <section class="mb-12">
             <div class="bg-white rounded-lg shadow-md p-8">
                 <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
                     <i class="fas fa-info-circle text-blue-600 mr-3"></i>
-                    Portal Overview
+                    Επισκόπηση Πύλης
                 </h2>
                 <div class="grid md:grid-cols-2 gap-8">
                     <div>
-                        <h3 class="text-lg font-semibold text-gray-700 mb-3">Target Audience</h3>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-3">Ομάδα Στόχος</h3>
                         <p class="text-gray-600">Social workers operating in regional social welfare directorates across Greece</p>
                     </div>
                     <div>
-                        <h3 class="text-lg font-semibold text-gray-700 mb-3">Core Functions</h3>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-3">Βασικές Λειτουργίες</h3>
                         <ul class="text-gray-600 space-y-1">
-                            <li>• Inspection management & reporting</li>
-                            <li>• Adoption & foster care case management</li>
-                            <li>• Legislative compliance guidance</li>
-                            <li>• Peer learning & professional development</li>
+                            <li>• Διαχείριση Ελέγχων & Αναφορών</li>
+                            <li>• Διαχείριση Υποθέσεων Υιοθεσίας & Αναδοχής</li>
+                            <li>• Καθοδήγηση Νομοθετικής Συμμόρφωσης</li>
+                            <li>• Συνεργατική Μάθηση & Επαγγελματική Ανάπτυξη</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Graphical Sitemap -->
+        <!-- Γραφικός Χάρτης Πλοήγησης -->
         <section class="mb-12">
             <div class="bg-white rounded-lg shadow-md p-8">
                 <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
                     <i class="fas fa-project-diagram text-blue-600 mr-3"></i>
-                    1. Graphical Sitemap
+                    1. Γραφικός Χάρτης Πλοήγησης
                 </h2>
                 
-                <!-- Homepage -->
+                <!-- Αρχική Σελίδα -->
                 <div class="mb-8">
                     <div class="flex items-center bg-blue-100 p-4 rounded-lg">
                         <i class="fas fa-home text-blue-600 text-xl mr-3"></i>
-                        <span class="text-lg font-semibold text-blue-800">Homepage</span>
+                        <span class="text-lg font-semibold text-blue-800">Αρχική Σελίδα</span>
                     </div>
                 </div>
 
@@ -99,16 +128,16 @@
                     <div class="tree-line mb-6">
                         <div class="tree-item bg-green-100 p-3 rounded mb-3">
                             <i class="fas fa-lock text-green-600 mr-2"></i>
-                            <span class="font-semibold">Secure Login System</span>
+                            <span class="font-semibold">Σύστημα Ασφαλούς Σύνδεσης</span>
                         </div>
                         <div class="ml-6 space-y-2">
                             <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                 <i class="fas fa-user-circle text-gray-500 mr-2"></i>
-                                User Authentication
+                                Ταυτοποίηση Χρήστη
                             </div>
                             <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                 <i class="fas fa-key text-gray-500 mr-2"></i>
-                                Role-based Access Control
+                                Έλεγχος Πρόσβασης ανά Ρόλο
                             </div>
                         </div>
                     </div>
@@ -117,16 +146,16 @@
                     <div class="tree-line mb-6">
                         <div class="tree-item bg-purple-100 p-3 rounded mb-3">
                             <i class="fas fa-search text-purple-600 mr-2"></i>
-                            <span class="font-semibold">Global Search</span>
+                            <span class="font-semibold">Καθολική Αναζήτηση</span>
                         </div>
                         <div class="ml-6 space-y-2">
                             <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                 <i class="fas fa-filter text-gray-500 mr-2"></i>
-                                Advanced Filters
+                                Σύνθετα Φίλτρα
                             </div>
                             <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                 <i class="fas fa-history text-gray-500 mr-2"></i>
-                                Search History
+                                Ιστορικό Αναζητήσεων
                             </div>
                         </div>
                     </div>
@@ -142,15 +171,15 @@
                             <div class="ml-6 space-y-2">
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    National Laws
+                                    Εθνικοί Νόμοι
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    EU Directives
+                                    Οδηγίες ΕΕ
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Regional Regulations
+                                    Περιφερειακοί Κανονισμοί
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="file-icon fas fa-file-pdf mr-2"></i>
@@ -159,7 +188,7 @@
                             </div>
                         </div>
 
-                        <!-- Application Forms -->
+                        <!-- Έντυπα Αιτήσεων -->
                         <div class="tree-line">
                             <div class="tree-item bg-yellow-100 p-3 rounded mb-3">
                                 <i class="fas fa-file-alt text-yellow-600 mr-2"></i>
@@ -168,15 +197,15 @@
                             <div class="ml-6 space-y-2">
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Adoption Forms
+                                    Έντυπα Υιοθεσίας
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Foster Care Forms
+                                    Έντυπα Αναδοχής
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Support Services
+                                    Υπηρεσίες Υποστήριξης
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="file-icon fas fa-file-word mr-2"></i>
@@ -185,7 +214,7 @@
                             </div>
                         </div>
 
-                        <!-- Inspection Reports -->
+                        <!-- Εκθέσεις Ελέγχων -->
                         <div class="tree-line">
                             <div class="tree-item bg-orange-100 p-3 rounded mb-3">
                                 <i class="fas fa-clipboard-check text-orange-600 mr-2"></i>
@@ -194,15 +223,15 @@
                             <div class="ml-6 space-y-2">
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Templates
+                                    Πρότυπα
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Completed Reports
+                                    Ολοκληρωμένες Εκθέσεις
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Quality Checklists
+                                    Λίστες Ελέγχου Ποιότητας
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="file-icon fas fa-file-excel mr-2"></i>
@@ -211,7 +240,7 @@
                             </div>
                         </div>
 
-                        <!-- Guides -->
+                        <!-- Οδηγοί -->
                         <div class="tree-line">
                             <div class="tree-item bg-green-100 p-3 rounded mb-3">
                                 <i class="fas fa-book text-green-600 mr-2"></i>
@@ -220,15 +249,15 @@
                             <div class="ml-6 space-y-2">
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Procedural Guides
+                                    Procedural Οδηγοί
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Best Practices
+                                    Βέλτιστες Πρακτικές
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Case Studies
+                                    Μελέτες Περίπτωσης
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="file-icon fas fa-file-pdf mr-2"></i>
@@ -240,7 +269,7 @@
 
                     <!-- Additional Sections -->
                     <div class="grid lg:grid-cols-2 gap-6 mt-6">
-                        <!-- Educational Material -->
+                        <!-- Εκπαιδευτικό Υλικό -->
                         <div class="tree-line">
                             <div class="tree-item bg-indigo-100 p-3 rounded mb-3">
                                 <i class="fas fa-graduation-cap text-indigo-600 mr-2"></i>
@@ -249,20 +278,20 @@
                             <div class="ml-6 space-y-2">
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Training Modules
+                                    Εκπαιδευτικές Ενότητες
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Webinars
+                                    Διαδικτυακά Σεμινάρια
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Certification Materials
+                                    Υλικό Πιστοποίησης
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Contact Directories -->
+                        <!-- Τηλεφωνικοί Κατάλογοι -->
                         <div class="tree-line">
                             <div class="tree-item bg-teal-100 p-3 rounded mb-3">
                                 <i class="fas fa-address-book text-teal-600 mr-2"></i>
@@ -271,20 +300,20 @@
                             <div class="ml-6 space-y-2">
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Regional Offices
+                                    Περιφερειακά Γραφεία
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Partner Organizations
+                                    Φορείς Συνεργασίας
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Emergency Contacts
+                                    Τηλέφωνα Έκτακτης Ανάγκης
                                 </div>
                             </div>
                         </div>
 
-                        <!-- News Sources -->
+                        <!-- Πηγές Ειδήσεων -->
                         <div class="tree-line">
                             <div class="tree-item bg-pink-100 p-3 rounded mb-3">
                                 <i class="fas fa-newspaper text-pink-600 mr-2"></i>
@@ -293,15 +322,15 @@
                             <div class="ml-6 space-y-2">
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Ministry Updates
+                                    Ενημερώσεις Υπουργείου
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Legislative Changes
+                                    Νομοθετικές Αλλαγές
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Industry News
+                                    Ειδήσεις Κλάδου
                                 </div>
                             </div>
                         </div>
@@ -310,24 +339,24 @@
                         <div class="tree-line">
                             <div class="tree-item bg-blue-100 p-3 rounded mb-3">
                                 <i class="fas fa-comments text-blue-600 mr-2"></i>
-                                <span class="font-semibold">Professional Forum</span>
+                                <span class="font-semibold">Φόρουμ Επαγγελματιών</span>
                             </div>
                             <div class="ml-6 space-y-2">
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Case Discussions
+                                    Συζητήσεις Υποθέσεων
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Legal Q&A
+                                    Νομικές Ερωτήσεις/Απαντήσεις
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Regional Groups
+                                    Περιφερειακές Ομάδες
                                 </div>
                                 <div class="tree-item bg-gray-50 p-2 rounded text-sm">
                                     <i class="folder-icon fas fa-folder mr-2"></i>
-                                    Announcements
+                                    Ανακοινώσεις
                                 </div>
                             </div>
                         </div>
@@ -336,12 +365,12 @@
             </div>
         </section>
 
-        <!-- Folder Structure Overview -->
+        <!-- Επισκόπηση Δομής Φακέλων -->
         <section class="mb-12">
             <div class="bg-white rounded-lg shadow-md p-8">
                 <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
                     <i class="fas fa-folder-tree text-blue-600 mr-3"></i>
-                    2. Folder Structure Overview
+                    2. Επισκόπηση Δομής Φακέλων
                 </h2>
                 
                 <div class="bg-gray-900 text-green-400 p-6 rounded-lg font-mono text-sm overflow-x-auto">
@@ -516,26 +545,26 @@ SOCIAL_WELFARE_PORTAL/
                 <div class="space-y-8">
                     <!-- User Journey 1 -->
                     <div class="bg-blue-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold text-blue-800 mb-4">User Journey: Conducting a Facility Inspection</h3>
+                        <h3 class="text-lg font-semibold text-blue-800 mb-4">Διαδρομή Χρήστη: Διενέργεια Επιθεώρησης Δομής</h3>
                         <div class="flex flex-wrap items-center space-x-2 text-sm">
                             <div class="bg-blue-200 px-3 py-1 rounded">Login</div>
                             <i class="fas fa-arrow-right text-blue-600"></i>
                             <div class="bg-blue-200 px-3 py-1 rounded">ΕΚΘΕΣΕΙΣ_ΕΛΕΓΧΩΝ</div>
                             <i class="fas fa-arrow-right text-blue-600"></i>
-                            <div class="bg-blue-200 px-3 py-1 rounded">Inspection Templates</div>
+                            <div class="bg-blue-200 px-3 py-1 rounded">Inspection Πρότυπα</div>
                             <i class="fas fa-arrow-right text-blue-600"></i>
                             <div class="bg-blue-200 px-3 py-1 rounded">Facility Inspection</div>
                             <i class="fas fa-arrow-right text-blue-600"></i>
                             <div class="bg-green-200 px-3 py-1 rounded">Download Template</div>
                         </div>
                         <div class="mt-4 text-sm text-gray-600">
-                            <strong>Cross-linking:</strong> Links to ΟΔΗΓΟΙ_ΕΦΑΡΜΟΓΗΣ for procedural guidance and ΤΗΛΕΦΩΝΙΚΟΙ_ΚΑΤΑΛΟΓΟΙ for facility contacts
+                            <strong>Διασυνδέσεις:</strong> Links to ΟΔΗΓΟΙ_ΕΦΑΡΜΟΓΗΣ for procedural guidance and ΤΗΛΕΦΩΝΙΚΟΙ_ΚΑΤΑΛΟΓΟΙ for facility contacts
                         </div>
                     </div>
 
                     <!-- User Journey 2 -->
                     <div class="bg-green-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold text-green-800 mb-4">User Journey: Researching Adoption Legislation</h3>
+                        <h3 class="text-lg font-semibold text-green-800 mb-4">Διαδρομή Χρήστη: Έρευνα Νομοθεσίας Υιοθεσίας</h3>
                         <div class="flex flex-wrap items-center space-x-2 text-sm">
                             <div class="bg-green-200 px-3 py-1 rounded">Search Bar</div>
                             <i class="fas fa-arrow-right text-green-600"></i>
@@ -548,49 +577,49 @@ SOCIAL_WELFARE_PORTAL/
                             <div class="bg-yellow-200 px-3 py-1 rounded">Specific Document</div>
                         </div>
                         <div class="mt-4 text-sm text-gray-600">
-                            <strong>Cross-linking:</strong> Related forms in ΕΝΤΥΠΑ_ΑΙΤΗΣΕΩΝ and implementation guides in ΟΔΗΓΟΙ_ΕΦΑΡΜΟΓΗΣ
+                            <strong>Διασυνδέσεις:</strong> Related forms in ΕΝΤΥΠΑ_ΑΙΤΗΣΕΩΝ and implementation guides in ΟΔΗΓΟΙ_ΕΦΑΡΜΟΓΗΣ
                         </div>
                     </div>
 
                     <!-- User Journey 3 -->
                     <div class="bg-purple-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold text-purple-800 mb-4">User Journey: Participating in Professional Discussion</h3>
+                        <h3 class="text-lg font-semibold text-purple-800 mb-4">Διαδρομή Χρήστη: Συμμετοχή σε Επαγγελματική Συζήτηση</h3>
                         <div class="flex flex-wrap items-center space-x-2 text-sm">
                             <div class="bg-purple-200 px-3 py-1 rounded">Login</div>
                             <i class="fas fa-arrow-right text-purple-600"></i>
-                            <div class="bg-purple-200 px-3 py-1 rounded">Professional Forum</div>
+                            <div class="bg-purple-200 px-3 py-1 rounded">Φόρουμ Επαγγελματιών</div>
                             <i class="fas fa-arrow-right text-purple-600"></i>
-                            <div class="bg-purple-200 px-3 py-1 rounded">Case Discussions</div>
+                            <div class="bg-purple-200 px-3 py-1 rounded">Συζητήσεις Υποθέσεων</div>
                             <i class="fas fa-arrow-right text-purple-600"></i>
-                            <div class="bg-purple-200 px-3 py-1 rounded">Active Thread</div>
+                            <div class="bg-purple-200 px-3 py-1 rounded">Ενεργό Θέμα</div>
                             <i class="fas fa-arrow-right text-purple-600"></i>
-                            <div class="bg-orange-200 px-3 py-1 rounded">Contribute Response</div>
+                            <div class="bg-orange-200 px-3 py-1 rounded">Καταχώριση Απάντησης</div>
                         </div>
                         <div class="mt-4 text-sm text-gray-600">
-                            <strong>Cross-linking:</strong> Reference documents from legislation, forms, and guides; link to relevant training materials
+                            <strong>Διασυνδέσεις:</strong> Reference documents from legislation, forms, and guides; link to relevant training materials
                         </div>
                     </div>
 
                     <!-- Cross-Linking Matrix -->
                     <div class="bg-gray-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Cross-Linking Strategy</h3>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Στρατηγική Διασυνδέσεων</h3>
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <h4 class="font-medium text-gray-700 mb-3">High-Priority Links</h4>
+                                <h4 class="font-medium text-gray-700 mb-3">Σύνδεσμοι Υψηλής Προτεραιότητας</h4>
                                 <ul class="space-y-2 text-sm text-gray-600">
-                                    <li>• Legislation ↔ Application Forms</li>
-                                    <li>• Inspection Reports ↔ Procedural Guides</li>
-                                    <li>• Forum Discussions ↔ All Resource Sections</li>
-                                    <li>• Educational Material ↔ Best Practice Guides</li>
+                                    <li>• Legislation ↔ Έντυπα Αιτήσεων</li>
+                                    <li>• Εκθέσεις Ελέγχων ↔ Procedural Οδηγοί</li>
+                                    <li>• Συζητήσεις Φόρουμ ↔ Όλες οι Ενότητες Πόρων</li>
+                                    <li>• Εκπαιδευτικό Υλικό ↔ Best Practice Οδηγοί</li>
                                 </ul>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-700 mb-3">Contextual Links</h4>
+                                <h4 class="font-medium text-gray-700 mb-3">Σύνδεσμοι Περιεχομένου</h4>
                                 <ul class="space-y-2 text-sm text-gray-600">
-                                    <li>• Search Results → Related Documents</li>
-                                    <li>• Document Views → Similar Resources</li>
-                                    <li>• User Profiles → Relevant Content</li>
-                                    <li>• Recent Updates → Impact Areas</li>
+                                    <li>• Αποτελέσματα Αναζήτησης → Σχετικά Έγγραφα</li>
+                                    <li>• Προβολές Εγγράφων → Παρόμοιοι Πόροι</li>
+                                    <li>• Προφίλ Χρηστών → Σχετικό Περιεχόμενο</li>
+                                    <li>• Πρόσφατες Ενημερώσεις → Τομείς Επιρροής</li>
                                 </ul>
                             </div>
                         </div>
@@ -599,12 +628,12 @@ SOCIAL_WELFARE_PORTAL/
             </div>
         </section>
 
-        <!-- Data Structure Recommendations -->
+        <!-- Συστάσεις Δομής Δεδομένων -->
         <section class="mb-12">
             <div class="bg-white rounded-lg shadow-md p-8">
                 <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
                     <i class="fas fa-database text-blue-600 mr-3"></i>
-                    4. Data Structure Recommendations
+                    4. Συστάσεις Δομής Δεδομένων
                 </h2>
                 
                 <div class="grid lg:grid-cols-2 gap-8">
@@ -612,7 +641,7 @@ SOCIAL_WELFARE_PORTAL/
                     <div class="bg-gray-50 p-6 rounded-lg">
                         <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
                             <i class="fas fa-tags text-blue-500 mr-2"></i>
-                            Folder Naming Conventions
+                            Κανόνες Ονοματοδοσίας Φακέλων
                         </h3>
                         <div class="space-y-4">
                             <div>
@@ -621,23 +650,23 @@ SOCIAL_WELFARE_PORTAL/
                                 <p class="text-sm text-gray-600 mt-1">Two-digit prefix for ordering, uppercase with underscores</p>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-700">Subfolders</h4>
+                                <h4 class="font-medium text-gray-700">Υποφάκελοι</h4>
                                 <code class="bg-gray-200 px-2 py-1 rounded text-sm">##_category_name</code>
                                 <p class="text-sm text-gray-600 mt-1">Two-digit prefix, lowercase with underscores</p>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-700">Archive Folders</h4>
+                                <h4 class="font-medium text-gray-700">Φάκελοι Αρχείων</h4>
                                 <code class="bg-gray-200 px-2 py-1 rounded text-sm">YYYY_archived_content</code>
                                 <p class="text-sm text-gray-600 mt-1">Year prefix for chronological organization</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- File Naming Templates -->
+                    <!-- File Naming Πρότυπα -->
                     <div class="bg-gray-50 p-6 rounded-lg">
                         <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
                             <i class="fas fa-file-signature text-green-500 mr-2"></i>
-                            File Naming Templates
+                            File Naming Πρότυπα
                         </h3>
                         <div class="space-y-4">
                             <div>
@@ -664,15 +693,15 @@ SOCIAL_WELFARE_PORTAL/
                     </div>
                 </div>
 
-                <!-- Metadata Standards -->
+                <!-- Πρότυπα Μεταδεδομένων -->
                 <div class="mt-8 bg-blue-50 p-6 rounded-lg">
                     <h3 class="text-lg font-semibold text-blue-800 mb-4 flex items-center">
                         <i class="fas fa-info-circle text-blue-600 mr-2"></i>
-                        Metadata Standards
+                        Πρότυπα Μεταδεδομένων
                     </h3>
                     <div class="grid md:grid-cols-3 gap-6">
                         <div>
-                            <h4 class="font-medium text-blue-700 mb-2">Required Fields</h4>
+                            <h4 class="font-medium text-blue-700 mb-2">Υποχρεωτικά Πεδία</h4>
                             <ul class="text-sm text-blue-600 space-y-1">
                                 <li>• Document Title</li>
                                 <li>• Creation Date</li>
@@ -683,7 +712,7 @@ SOCIAL_WELFARE_PORTAL/
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-medium text-blue-700 mb-2">Optional Fields</h4>
+                            <h4 class="font-medium text-blue-700 mb-2">Προαιρετικά Πεδία</h4>
                             <ul class="text-sm text-blue-600 space-y-1">
                                 <li>• Keywords/Tags</li>
                                 <li>• Subject Categories</li>
@@ -694,7 +723,7 @@ SOCIAL_WELFARE_PORTAL/
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-medium text-blue-700 mb-2">System Fields</h4>
+                            <h4 class="font-medium text-blue-700 mb-2">Συστημικά Πεδία</h4>
                             <ul class="text-sm text-blue-600 space-y-1">
                                 <li>• File Size</li>
                                 <li>• Download Count</li>
@@ -711,7 +740,7 @@ SOCIAL_WELFARE_PORTAL/
                 <div class="mt-8 bg-yellow-50 p-6 rounded-lg">
                     <h3 class="text-lg font-semibold text-yellow-800 mb-4 flex items-center">
                         <i class="fas fa-code-branch text-yellow-600 mr-2"></i>
-                        Version Control Strategy
+                        Στρατηγική Έκδοσης
                     </h3>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
@@ -905,38 +934,38 @@ SOCIAL_WELFARE_PORTAL/
                 
                 <div class="grid lg:grid-cols-3 gap-6">
                     <div class="bg-blue-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold text-blue-800 mb-4">Usage Metrics</h3>
+                        <h3 class="text-lg font-semibold text-blue-800 mb-4">Μετρήσεις Χρήσης</h3>
                         <ul class="space-y-2 text-sm text-blue-700">
-                            <li>• Daily active users</li>
-                            <li>• Document downloads</li>
-                            <li>• Search queries performed</li>
-                            <li>• Forum participation rate</li>
-                            <li>• Time spent on portal</li>
-                            <li>• Mobile vs desktop usage</li>
+                            <li>• Ημερήσιοι ενεργοί χρήστες</li>
+                            <li>• Λήψεις εγγράφων</li>
+                            <li>• Εκτελεσμένες αναζητήσεις</li>
+                            <li>• Ποσοστό συμμετοχής στο φόρουμ</li>
+                            <li>• Χρόνος παραμονής στην πύλη</li>
+                            <li>• Χρήση από κινητό έναντι υπολογιστή</li>
                         </ul>
                     </div>
                     
                     <div class="bg-green-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold text-green-800 mb-4">Content Metrics</h3>
+                        <h3 class="text-lg font-semibold text-green-800 mb-4">Μετρήσεις Περιεχομένου</h3>
                         <ul class="space-y-2 text-sm text-green-700">
-                            <li>• Document freshness</li>
-                            <li>• Content update frequency</li>
-                            <li>• Most accessed resources</li>
-                            <li>• Search success rate</li>
-                            <li>• Cross-link utilization</li>
-                            <li>• User-generated content</li>
+                            <li>• Επικαιρότητα εγγράφων</li>
+                            <li>• Συχνότητα ενημερώσεων περιεχομένου</li>
+                            <li>• Πιο συχνά προσβάσιμοι πόροι</li>
+                            <li>• Ποσοστό επιτυχίας αναζήτησης</li>
+                            <li>• Χρήση διασυνδέσεων</li>
+                            <li>• Περιεχόμενο χρηστών</li>
                         </ul>
                     </div>
                     
                     <div class="bg-purple-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold text-purple-800 mb-4">Quality Metrics</h3>
+                        <h3 class="text-lg font-semibold text-purple-800 mb-4">Δείκτες Ποιότητας</h3>
                         <ul class="space-y-2 text-sm text-purple-700">
-                            <li>• User satisfaction scores</li>
-                            <li>• Support ticket volume</li>
-                            <li>• System uptime</li>
-                            <li>• Page load speeds</li>
-                            <li>• Error rates</li>
-                            <li>• Training completion rates</li>
+                            <li>• Βαθμολογία ικανοποίησης χρηστών</li>
+                            <li>• Όγκος αιτημάτων υποστήριξης</li>
+                            <li>• Χρόνος απρόσκοπτης λειτουργίας</li>
+                            <li>• Ταχύτητα φόρτωσης σελίδων</li>
+                            <li>• Ποσοστά σφαλμάτων</li>
+                            <li>• Ποσοστά ολοκλήρωσης εκπαίδευσης</li>
                         </ul>
                     </div>
                 </div>
@@ -947,7 +976,7 @@ SOCIAL_WELFARE_PORTAL/
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-6 text-center">
-            <p class="text-gray-300">Social Welfare Portal - Information Architecture Design</p>
+            <p class="text-gray-300">Πύλη Κοινωνικής Μέριμνας - Information Architecture Design</p>
             <p class="text-gray-400 text-sm mt-2">Designed for scalability, usability, and professional excellence</p>
         </div>
     </footer>
